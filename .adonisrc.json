@@ -26,6 +26,9 @@
     "./backend/start/routes",
     "./backend/start/kernel"
   ],
+  "namespaces": {
+    "httpControllers":"App/Controllers/Http"
+  },
   "providers": [
     "./backend/providers/AppProvider",
     "@adonisjs/core",

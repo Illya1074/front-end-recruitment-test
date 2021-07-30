@@ -2,7 +2,12 @@
 @set('title', 'Bacon factory')
 
 @section('body')
-  @!component('snowdog/bacon', {
-    img: '/images/bacon.jpg'
-  })
+
+  @each(user in obj.val)
+    @!component('snowdog/bacon', {
+      img: '/images/bacon.jpg'
+    })
+  @end
+
+    
 @end

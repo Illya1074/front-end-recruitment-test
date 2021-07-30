@@ -1,5 +1,5 @@
 {
   "extends": [
-    "plugin:adonis/typescriptApp"
+    // "plugin:adonis/typescriptApp"
   ]
 }
