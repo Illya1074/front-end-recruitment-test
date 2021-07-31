@@ -25,9 +25,14 @@ Route.get('/', async ({ view }) => {
   return view.render('index')
 })
 
+Route.get('/design', async ({ view }) => {
+  return view.render('paymentForm')
+})
+
 Route.post('bacon', 'BaconsController.set')
 
 Route.get('bacon', 'BaconsController.get')
+
 
 
 // Route.get('/bacon', async ({ view }) => {
