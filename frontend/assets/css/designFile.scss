@@ -30,9 +30,16 @@ h3 {
 }
 
 .payment{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     // border: 1px solid black;
     width: 1000px;
     margin: 30px auto 0;
@@ -42,17 +49,28 @@ h3 {
         width: 70%;
         position: relative;
         // padding: 0 20px 0 0;
-        .flex-row{
-            justify-content: space-between;
+        .flex-row {
+
+            -webkit-box-pack: justify;
+
+                -ms-flex-pack: justify;
+
+                    justify-content: space-between;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: row;    
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;    
     
-            div{
+            div {
                 // width: 90%;
                 margin: 0 20px 0 0;
             }
+
         }
-    
+
         .button-box{
             // border: 1px solid black;
             padding: 0 20px 0 0;
@@ -66,7 +84,8 @@ h3 {
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             font-weight: 900;
-            padding: 20px 0 20px 20px;
+            height: 55px;
+            padding: 20px 0 20px 0;
             // margin: 0 50px 0 0;
             color: white;
             border-radius: 4px;
@@ -74,13 +93,15 @@ h3 {
             box-shadow: none;
             cursor: pointer;
         }
+
         select{
             outline: none;
             border: none;
             border-bottom: 2px solid #ddd;
+            background-color: white;
             border-radius: 4px;
             width: 100%;
-            padding: 25px 0 7px 10px;
+            padding: 24px 0 6px 10px;
             font-size: 17px;
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
@@ -99,6 +120,27 @@ h3 {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
             color: #333;
+        }
+
+        input::-webkit-input-placeholder {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input::-moz-placeholder {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input:-ms-input-placeholder {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #555;
         }
 
         input::placeholder {
@@ -124,7 +166,8 @@ h3 {
             border-bottom: 2px solid #333;
             border-right: 2px solid #333;
             right: 20px;
-            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
         }
     
         .dropdown-content {
@@ -192,6 +235,8 @@ h3 {
     border-bottom: 2px solid #ddd;
     border-radius: 4px;
     background: white;
+    height: -webkit-min-content;
+    height: -moz-min-content;
     height: min-content;
     .payment-order_border{
         margin: 10px;
@@ -212,9 +257,16 @@ h3 {
         
         .payment-order_container_info{
             margin: 10px 0 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             font-size: 13px;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
@@ -223,9 +275,16 @@ h3 {
 
     }
     .payment-order_info{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         // border: 1px solid black;
         margin: 10px 30px 60px 30px;
         .payment-order_info-total {

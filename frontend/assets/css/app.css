@@ -51,6 +51,14 @@ main {
   margin-bottom: 40px;
 }
 
+.error{
+  color: red;
+  width: 100vw;
+  margin: 30px 0 0;
+  padding: 0 0 100px;
+  text-align: center;
+}
+
 p {
   margin-bottom: 20px;
 }
@@ -115,7 +123,13 @@ img {
   max-width: 200px;
 }
 
-
+.comfirmed-title{
+  font-size: 50px;
+  background-color: greenyellow;
+  padding: 20px;
+  color: #333;
+  border-radius: 20px;
+}
 
 
 

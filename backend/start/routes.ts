@@ -19,14 +19,15 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import { schema, rules } from '@ioc:Adonis/Core/Validator'
+// import { schema, rules } from '@ioc:Adonis/Core/Validator'
 
 Route.get('/', async ({ view }) => {
   return view.render('index')
 })
 
-Route.get('/design', async ({ view }) => {
-  return view.render('paymentForm')
+Route.get('/task2', async ({ view }) => {
+ 
+  return view.render('task2')
 })
 
 Route.post('bacon', 'BaconsController.set')
@@ -34,60 +35,75 @@ Route.post('bacon', 'BaconsController.set')
 Route.get('bacon', 'BaconsController.get')
 
 
+Route.get('/task3', async ({ view }) => {
+ 
+  return view.render('task3')
+})
+
+Route.post('task3', 'ValidationsController.index')
+
+
+Route.get('/task4', async ({ view }) => {
+ 
+  return view.render('task4')
+})
+
+Route.post('task4', 'OrdersController.index')
+
 
 // Route.get('/bacon', async ({ view }) => {
 //   return view.render('bacon')
 // })
 
-Route.get('/checkout', async ({ view }) => {
-  const state = {
-    cart: {
-      items: [
-        { name: 'Apple Watch Sport', price: 580 },
-        { name: 'Modern Buckle', price: 380 },
-      ],
-      totals: {
-        subTotal: 960,
-        tax: 0,
-        grandTotal: 960,
-      },
-    },
-  }
+// Route.get('/checkout', async ({ view }) => {
+  // const state = {
+  //   cart: {
+  //     items: [
+  //       { name: 'Apple Watch Sport', price: 580 },
+  //       { name: 'Modern Buckle', price: 380 },
+  //     ],
+  //     totals: {
+  //       subTotal: 960,
+  //       tax: 0,
+  //       grandTotal: 960,
+  //     },
+  //   },
+  // }
 
-  return view.render('index', state)
-})
+//   return view.render('index', state)
+// })
 
-Route.post('/order', async ({ request, response }) => {
-  const orderSchema = schema.create({
-    firstName: schema.string(),
-    lastName: schema.string(),
-    email: schema.string({}, [
-      rules.email(),
-    ]),
-    country: schema.string(),
-    postalCode: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{5}$')),
-    ]),
-    phone: schema.string({}, [
-      rules.mobile(),
-    ]),
-    creditCard: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{16}$')),
-    ]),
-    CVV: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{3}$')),
-    ]),
-    expDate: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{2}\/[0-9]{2}$')),
-    ]),
-  })
+// Route.post('/order', async ({ request, response }) => {
+//   const orderSchema = schema.create({
+//     firstName: schema.string(),
+//     lastName: schema.string(),
+//     email: schema.string({}, [
+//       rules.email(),
+//     ]),
+//     country: schema.string(),
+//     postalCode: schema.string({}, [
+//       rules.regex(new RegExp('^[0-9]{5}$')),
+//     ]),
+//     phone: schema.string({}, [
+//       rules.mobile(),
+//     ]),
+//     creditCard: schema.string({}, [
+//       rules.regex(new RegExp('^[0-9]{16}$')),
+//     ]),
+//     CVV: schema.string({}, [
+//       rules.regex(new RegExp('^[0-9]{3}$')),
+//     ]),
+//     expDate: schema.string({}, [
+//       rules.regex(new RegExp('^[0-9]{2}\/[0-9]{2}$')),
+//     ]),
+//   })
 
-  try {
-    await request.validate({ schema: orderSchema })
-    response.send({
-      message: 'Order successfully placed.',
-    })
-  } catch(error) {
-    response.badRequest(error.messages)
-  }
-})
+//   try {
+//     await request.validate({ schema: orderSchema })
+//     response.send({
+//       message: 'Order successfully placed.',
+//     })
+//   } catch(error) {
+//     response.badRequest(error.messages)
+//   }
+// })
